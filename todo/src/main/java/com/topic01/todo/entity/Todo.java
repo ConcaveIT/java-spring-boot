@@ -10,40 +10,49 @@ public class Todo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long ID;
-  private String Title;
-  private String Description;
-  private String Status;
+  private Long id;
+  private String title;
+  private String description;
+  private String status;
 
   public Todo() {}
 
-  public Todo(String title, String description, String status) {
-    Title = title;
-    Description = description;
-    Status = status;
+  public Todo(Long id, String title, String description, String status) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.status = status;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public String getTitle() {
-    return Title;
+    return title;
   }
 
   public void setTitle(String title) {
-    Title = title;
+    this.title = title;
   }
 
   public String getDescription() {
-    return Description;
+    return description;
   }
 
   public void setDescription(String description) {
-    Description = description;
+    this.description = description;
   }
 
   public String getStatus() {
-    return Status;
+    return status;
   }
 
   public void setStatus(String status) {
-    Status = status;
+    this.status = status;
   }
 }

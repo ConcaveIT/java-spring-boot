@@ -1,6 +1,7 @@
 package com.topic01.todo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,12 @@ public class TodoServiceImpl implements TodoService {
   public List<Todo> fetchAllTodos() {
     List<Todo> allTodos = todoRepository.findAll();
     return allTodos;
+  }
+
+  @Override
+  public Todo getTodoById(Long id) {
+    Optional<Todo> todo = todoRepository.findById(id);
+    return todo.isPresent() ? todo.get() : null;
   }
 
 }

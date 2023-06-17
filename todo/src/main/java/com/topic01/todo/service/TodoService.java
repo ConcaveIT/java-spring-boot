@@ -7,4 +7,5 @@ import com.topic01.todo.entity.Todo;
 public interface TodoService {
   Todo saveTodo(Todo todo);
   List<Todo> fetchAllTodos();
+  Todo getTodoById(Long id);
 }
