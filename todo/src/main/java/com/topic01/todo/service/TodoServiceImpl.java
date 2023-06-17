@@ -31,4 +31,17 @@ public class TodoServiceImpl implements TodoService {
     return todo.isPresent() ? todo.get() : null;
   }
 
+  @Override
+  public Todo updateTodoById(Long id, Todo todo) {
+    Optional<Todo> oldTodo = todoRepository.findById(id);
+    if (oldTodo.isPresent()) {
+      Todo newTodo = oldTodo.get();
+      newTodo.setTitle(todo.getTitle());
+      newTodo.setDescription(todo.getDescription());
+      newTodo.setStatus(todo.getStatus());
+      return todoRepository.save(newTodo);
+    }
+    return null;
+  }
+
 }

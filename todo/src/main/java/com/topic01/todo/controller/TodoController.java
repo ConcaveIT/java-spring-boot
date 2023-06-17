@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,8 +34,8 @@ public class TodoController {
       return todoService.getTodoById(id);
   }
 
-  @GetMapping("/test")
-  public String test() {
-    return "testing";
+  @PutMapping("/todos/{id}")
+  public Todo updateTodoById(@PathVariable("id") Long id, @RequestBody Todo todo) {
+    return todoService.updateTodoById(id, todo);
   }
 }
