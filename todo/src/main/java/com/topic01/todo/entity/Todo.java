@@ -13,11 +13,11 @@ public class Todo {
   private Long id;
   private String title;
   private String description;
-  private String status;
+  private Boolean status;
 
   public Todo() {}
 
-  public Todo(Long id, String title, String description, String status) {
+  public Todo(Long id, String title, String description, Boolean status) {
     this.id = id;
     this.title = title;
     this.description = description;
@@ -48,11 +48,11 @@ public class Todo {
     this.description = description;
   }
 
-  public String getStatus() {
+  public Boolean getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(Boolean status) {
     this.status = status;
   }
 }

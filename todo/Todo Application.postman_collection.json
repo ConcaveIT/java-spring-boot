@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": \"Test Status 1\"\n}",
+					"raw": "{\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -60,7 +60,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": \"Test Status 1\"\n}"
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": true\n}"
 				}
 			]
 		},
@@ -100,7 +100,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Test Title 1\",\n        \"description\": \"Test Description 1\",\n        \"status\": \"Test Status 1\"\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Test Title 2\",\n        \"description\": \"Test Description 2\",\n        \"status\": \"Test Status 2\"\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Test Title 3\",\n        \"description\": \"Test Description 3\",\n        \"status\": \"Test Status 3\"\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Test Title 4\",\n        \"description\": \"Test Description 4\",\n        \"status\": \"Test Status 4\"\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Test Title 5\",\n        \"description\": \"Test Description 5\",\n        \"status\": \"Test Status 5\"\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Test Title 6\",\n        \"description\": \"Test Description 6\",\n        \"status\": \"Test Status 6\"\n    }\n]"
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Test Title 1\",\n        \"description\": \"Test Description 1\",\n        \"status\": true\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Test Title 2\",\n        \"description\": \"Test Description 2\",\n        \"status\": true\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Test Title 3\",\n        \"description\": \"Test Description 3\",\n        \"status\": true\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Test Title 4\",\n        \"description\": \"Test Description 4\",\n        \"status\": false\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Test Title 5\",\n        \"description\": \"Test Description 5\",\n        \"status\": false\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Test Title 6\",\n        \"description\": \"Test Description 6\",\n        \"status\": false\n    }\n]"
 				}
 			]
 		},
@@ -130,7 +130,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": \"Test Status 1\"\n}"
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": true\n}"
 				}
 			]
 		},
@@ -141,7 +141,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": \"Test Status Updated\"\n}",
+					"raw": "{\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": false\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +174,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": \"Test Status Updated\"\n}",
+							"raw": "{\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -197,7 +197,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": \"Test Status Updated\"\n}"
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title Updated\",\n    \"description\": \"Test Description Updated\",\n    \"status\": false\n}"
 				}
 			]
 		},
@@ -239,7 +239,7 @@
 					"_postman_previewlanguage": null,
 					"header": null,
 					"cookie": [],
-					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": \"Test Status 1\"\n}"
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Test Title 1\",\n    \"description\": \"Test Description 1\",\n    \"status\": false\n}"
 				}
 			]
 		}
