@@ -44,4 +44,14 @@ public class TodoServiceImpl implements TodoService {
     return null;
   }
 
+  @Override
+  public Todo deleteTodoById(Long id) {
+    Optional<Todo> todo = todoRepository.findById(id);
+    if(todo.isPresent()) {
+      todoRepository.deleteById(id);
+      return todo.get();
+    }
+    return null;
+  }
+
 }

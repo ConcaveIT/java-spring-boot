@@ -9,4 +9,5 @@ public interface TodoService {
   List<Todo> fetchAllTodos();
   Todo getTodoById(Long id);
   Todo updateTodoById(Long id, Todo todo);
+  Todo deleteTodoById(Long id);
 }
