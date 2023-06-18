@@ -10,8 +10,8 @@
 **Body Data (POST / PUT)**
 ```
 {
-    "title":"yo todo 2",
-    "description":"First todo description 222",
-    "status": true
+    "title":"My Todo list",
+    "description":"Description of the todo. What to do",
+    "status": true/false
 }
 ```
