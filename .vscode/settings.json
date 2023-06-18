@@ -1,0 +1,14 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "admin",
+            "database": "${workspaceFolder:java-spring-boot}/sqlitesample.db",
+            "group": "admin"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "java.compile.nullAnalysis.mode": "automatic"
+}
