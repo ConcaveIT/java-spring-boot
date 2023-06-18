@@ -1,4 +1,4 @@
-# Simple Rest TODO list 
+# Simple REST TODO list 
 
 **Endpoints**
 - GET /todos: Retrieve all todos
@@ -15,3 +15,7 @@
     "status": true/false
 }
 ```
+
+Next goal:
+-Convert it MVCRS pattern (In Progress)s
+-Add UnitTest (In Progress)
