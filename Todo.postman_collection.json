@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "a4decaa2-1bbe-41dc-96b7-5b351e72117c",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28051621"
+	},
+	"item": [
+		{
+			"name": "Todo Lists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/todos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1/todos/3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"todos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 2,\r\n        \"title\": \"New Task 2\",\r\n        \"description\": \"New task description 2\",\r\n        \"status\": false,\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/todos",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"New Task Awesome\",\r\n    \"description\": \"New task description 2\",\r\n    \"status\": false,\r\n    \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n    \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n    \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/v1/todos/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"todos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{{base_url}}",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
