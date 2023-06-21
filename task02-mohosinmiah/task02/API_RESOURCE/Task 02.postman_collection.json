@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "e1064109-7718-4134-911f-f5e29891a9ad",
+		"name": "Task 02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4954358"
+	},
+	"item": [
+		{
+			"name": "Save todos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test\",\r\n    \"description\": \"Payment made using a credit card.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/payment-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Payment Types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/payment-types",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment-types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment Type by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v1/payment-types/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment-types",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Payment Type by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Debit Card Updated\",\r\n    \"description\": \"Payment made using a debit card.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/payment-types/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment-types",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"BD Team\",\r\n  \"description\": \"Your description value\",\r\n  \"status\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v1/payment-types/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v1",
+						"payment-types",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
