@@ -51,7 +51,7 @@ public class PaymentTypeServiceImpl implements PaymentTypeService {
   @Override
   public PaymentType deletePaymentTypeById(Long id) {
     Optional<PaymentType> paymentType = paymentTypeRepository.findById(id);
-    if(paymentType.isPresent()) {
+    if (paymentType.isPresent()) {
       paymentTypeRepository.deleteById(id);
       return paymentType.get();
     }

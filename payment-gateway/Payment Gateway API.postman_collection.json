@@ -120,7 +120,7 @@
 			},
 			"response": [
 				{
-					"name": "Read Payment Type By ID",
+					"name": "Read Payment Type By ID (Success)",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -141,6 +141,27 @@
 					"header": null,
 					"cookie": [],
 					"body": "{\n    \"id\": 1,\n    \"name\": \"Test Name 1\",\n    \"description\": \"Test Description 1\"\n}"
+				},
+				{
+					"name": "Read Payment Type By ID (Error)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/payment-types/100",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment-types",
+								"100"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": \"NOT_FOUND\",\n    \"message\": \"Payment Type is not available!\"\n}"
 				}
 			]
 		},

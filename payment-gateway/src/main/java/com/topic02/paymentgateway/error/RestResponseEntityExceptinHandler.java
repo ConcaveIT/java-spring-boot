@@ -15,7 +15,8 @@ import com.topic02.paymentgateway.entity.ErrorMessage;
 public class RestResponseEntityExceptinHandler extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler(PaymentTypeNotFoundException.class)
-  public ResponseEntity<ErrorMessage> paymentTypeNotFoundException(PaymentTypeNotFoundException exception, WebRequest request) {
+  public ResponseEntity<ErrorMessage> paymentTypeNotFoundException(PaymentTypeNotFoundException exception,
+      WebRequest request) {
     ErrorMessage message = new ErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
     return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
   }
