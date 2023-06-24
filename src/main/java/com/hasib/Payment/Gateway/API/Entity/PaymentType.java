@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "payment_type")
+@Table(name = "payment_types")
 @Data
 public class PaymentType {
     @Id
