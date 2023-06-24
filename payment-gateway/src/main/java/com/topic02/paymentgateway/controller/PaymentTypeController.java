@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.topic02.paymentgateway.entity.PaymentType;
 import com.topic02.paymentgateway.service.PaymentTypeService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/payment-types")
 public class PaymentTypeController {
@@ -23,7 +25,7 @@ public class PaymentTypeController {
   private PaymentTypeService paymentTypeService;
 
   @PostMapping("")
-  public PaymentType savePaymentType(@RequestBody PaymentType paymentType) {
+  public PaymentType savePaymentType(@Valid @RequestBody PaymentType paymentType) {
     return paymentTypeService.savePaymentType(paymentType);
   }
 
