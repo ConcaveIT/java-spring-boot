@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.topic02.paymentgateway.entity.PaymentType;
+import com.topic02.paymentgateway.error.PaymentTypeNotFoundException;
 import com.topic02.paymentgateway.service.PaymentTypeService;
 
 import jakarta.validation.Valid;
@@ -41,7 +42,7 @@ public class PaymentTypeController {
   }
 
   @GetMapping("/{id}")
-  public PaymentType getPaymentTypeById(@PathVariable("id") Long id) {
+  public PaymentType getPaymentTypeById(@PathVariable("id") Long id) throws PaymentTypeNotFoundException {
     LOGGER.info("Inside getPaymentTypeById method of PaymentTypeController class");
     return paymentTypeService.getPaymentTypeById(id);
   }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.topic02.paymentgateway.entity.PaymentType;
+import com.topic02.paymentgateway.error.PaymentTypeNotFoundException;
 import com.topic02.paymentgateway.repository.PaymentTypeRepository;
 
 @Service
@@ -27,9 +28,12 @@ public class PaymentTypeServiceImpl implements PaymentTypeService {
   }
 
   @Override
-  public PaymentType getPaymentTypeById(Long id) {
+  public PaymentType getPaymentTypeById(Long id) throws PaymentTypeNotFoundException {
     Optional<PaymentType> paymentType = paymentTypeRepository.findById(id);
-    return paymentType.isPresent() ? paymentType.get() : null;
+    if (!paymentType.isPresent()) {
+      throw new PaymentTypeNotFoundException("Payment Type is not available!");
+    }
+    return paymentType.get();
   }
 
   @Override
