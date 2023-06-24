@@ -1,5 +1,9 @@
 package com.advpro.payment.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -7,10 +11,13 @@ import java.util.Date;
 
 @Entity
 @Table(name="paymentTypes")
+@Data
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
 public class PaymentType {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
 	@Column(nullable = false)
@@ -29,71 +36,10 @@ public class PaymentType {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedAt;
 
-	@Basic(optional = false)
+	@Basic(optional = true)
 	@Column(name = "DeletedAt", nullable=true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date deletedAt;
-
-	public PaymentType(
-		String name, 
-		String description, 
-		Date createdAt, 
-		Date updatedAt, 
-		Date deletedAt
-	) {
-	    this.name = name;
-	    this.description = description;
-	    this.createdAt = createdAt;
-	    this.updatedAt = updatedAt;
-	}
-
-	protected PaymentType() {
-		// NoArgsConstructor
-	}
-
-	public Integer getId() {
-	    return id;
-	}
-
-	public String getName() {
-	    return name;
-	}
-
-	public void setName(String name) {
-	    this.name = name;
-	}
-
-	public String getDescription() {
-	    return description;
-	}
-
-	public void setDescription(String description) {
-	    this.description = description;
-	}
-
-	public Date getCreatedAt() {
-	    return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-	    this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-	    return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-	    this.updatedAt = updatedAt;
-	}
-
-	public Date getDeletedAt() {
-	    return deletedAt;
-	}
-
-	public void setDeletedAt(Date deletedAt) {
-	    this.deletedAt = deletedAt;
-	}
 
 	@Override
 	public String toString() {

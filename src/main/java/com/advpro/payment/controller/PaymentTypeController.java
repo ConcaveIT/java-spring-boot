@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.advpro.payment.model.PaymentType;
+import com.advpro.payment.dto.PaymentTypeDto;
 import com.advpro.payment.service.PaymentTypeService;
 
 import java.util.List;
@@ -18,26 +19,26 @@ public class PaymentTypeController {
     private PaymentTypeService paymentTypeService;
 
     @GetMapping
-    public List<PaymentType> getAllPaymentTypes(){
-        return paymentTypeService.getAllPaymentTypes();
+    public ResponseEntity<List<PaymentType>> getAllPaymentTypes(){
+        return ResponseEntity.ok(paymentTypeService.getAllPaymentTypes());
     }
 
     @PostMapping
-    public PaymentType storePaymentType(@RequestBody PaymentType paymentType) {
-        return paymentTypeService.storePaymentType(paymentType);
+    public ResponseEntity<PaymentType> storePaymentType(@RequestBody PaymentTypeDto paymentTypeDto) {
+        return new ResponseEntity<>(paymentTypeService.storePaymentType(paymentTypeDto), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public PaymentType getPaymentType(@PathVariable("id") Integer id) {
-        return paymentTypeService.getPaymentType(id);
+    public ResponseEntity<PaymentType> getPaymentType(@PathVariable("id") Integer id) {
+        return ResponseEntity.ok(paymentTypeService.getPaymentType(id));
     }
 
     @PutMapping("/{id}")
-    public PaymentType updatePaymentType(
+    public ResponseEntity<PaymentType> updatePaymentType(
     	@PathVariable("id") Integer id, 
-    	@RequestBody PaymentType paymentType
+    	@RequestBody PaymentTypeDto paymentTypeDto
     ) {
-        return paymentTypeService.updatePaymentType(paymentType);
+        return ResponseEntity.ok(paymentTypeService.updatePaymentType(id, paymentTypeDto));
     }
 
     @DeleteMapping("/{id}")

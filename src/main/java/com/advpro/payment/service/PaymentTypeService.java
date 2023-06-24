@@ -1,14 +1,15 @@
 package com.advpro.payment.service;
 
 import com.advpro.payment.model.PaymentType;
+import com.advpro.payment.dto.PaymentTypeDto;
 
 import java.util.List;
 
 public interface PaymentTypeService {
 
-    public PaymentType storePaymentType(PaymentType PaymentType);
+    public PaymentType storePaymentType(PaymentTypeDto paymentTypeDto);
 
-    public PaymentType updatePaymentType(PaymentType PaymentType);
+    public PaymentType updatePaymentType(Integer id, PaymentTypeDto paymentTypeDto);
 
     public String deletePaymentType(Integer id);
 
