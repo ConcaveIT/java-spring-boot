@@ -1,5 +1,8 @@
 package com.topic02.paymentgateway.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +20,37 @@ public class PaymentTypeServiceImpl implements PaymentTypeService {
     return paymentTypeRepository.save(paymentType);
   }
 
+  @Override
+  public List<PaymentType> fetchAllPaymentTypes() {
+    List<PaymentType> allPaymentTypes = paymentTypeRepository.findAll();
+    return allPaymentTypes;
+  }
+
+  @Override
+  public PaymentType getPaymentTypeById(Long id) {
+    Optional<PaymentType> paymentType = paymentTypeRepository.findById(id);
+    return paymentType.isPresent() ? paymentType.get() : null;
+  }
+
+  @Override
+  public PaymentType updatePaymentTypeById(Long id, PaymentType paymentType) {
+    Optional<PaymentType> oldPaymentType = paymentTypeRepository.findById(id);
+    if (oldPaymentType.isPresent()) {
+      PaymentType newPaymentType = oldPaymentType.get();
+      newPaymentType.setName(paymentType.getName());
+      newPaymentType.setDescription(paymentType.getDescription());
+      return paymentTypeRepository.save(newPaymentType);
+    }
+    return null;
+  }
+
+  @Override
+  public PaymentType deletePaymentTypeById(Long id) {
+    Optional<PaymentType> paymentType = paymentTypeRepository.findById(id);
+    if(paymentType.isPresent()) {
+      paymentTypeRepository.deleteById(id);
+      return paymentType.get();
+    }
+    return null;
+  }
 }
