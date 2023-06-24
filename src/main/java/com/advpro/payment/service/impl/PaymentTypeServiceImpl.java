@@ -3,6 +3,7 @@ package com.advpro.payment.service.impl;
 import com.advpro.payment.model.PaymentType;
 import com.advpro.payment.repository.PaymentTypeRepository;
 import com.advpro.payment.service.PaymentTypeService;
+import com.advpro.payment.exception.PaymentMethodNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +40,9 @@ public class PaymentTypeServiceImpl implements PaymentTypeService {
 
     @Override
     public PaymentType getPaymentType(Integer id) {
+        if(paymentTypeRepository.findById(id).isEmpty())
+            throw new PaymentMethodNotFoundException("Payment method does not exist!");
+
         return paymentTypeRepository.findById(id).get();
     }
 
