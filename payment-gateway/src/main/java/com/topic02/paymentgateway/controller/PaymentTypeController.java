@@ -2,6 +2,8 @@ package com.topic02.paymentgateway.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,28 +26,35 @@ public class PaymentTypeController {
   @Autowired
   private PaymentTypeService paymentTypeService;
 
+  private final Logger LOGGER = LoggerFactory.getLogger(PaymentTypeController.class);
+
   @PostMapping("")
   public PaymentType savePaymentType(@Valid @RequestBody PaymentType paymentType) {
+    LOGGER.info("Inside savePaymentType method of PaymentTypeController class");
     return paymentTypeService.savePaymentType(paymentType);
   }
 
   @GetMapping("")
   public List<PaymentType> getAllPaymentTypes() {
+    LOGGER.info("Inside getAllPaymentTypes method of PaymentTypeController class");
     return paymentTypeService.fetchAllPaymentTypes();
   }
 
   @GetMapping("/{id}")
   public PaymentType getPaymentTypeById(@PathVariable("id") Long id) {
-      return paymentTypeService.getPaymentTypeById(id);
+    LOGGER.info("Inside getPaymentTypeById method of PaymentTypeController class");
+    return paymentTypeService.getPaymentTypeById(id);
   }
 
   @PutMapping("/{id}")
   public PaymentType updatePaymentTypeById(@PathVariable("id") Long id, @RequestBody PaymentType paymentType) {
+    LOGGER.info("Inside updatePaymentTypeById method of PaymentTypeController class");
     return paymentTypeService.updatePaymentTypeById(id, paymentType);
   }
 
   @DeleteMapping("/{id}")
   public PaymentType deletePaymentTypeById(@PathVariable("id") Long id) {
+    LOGGER.info("Inside deletePaymentTypeById method of PaymentTypeController class");
     return paymentTypeService.deletePaymentTypeById(id);
   }
 
