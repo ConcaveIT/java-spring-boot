@@ -8,11 +8,11 @@
 		<version>3.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Todo.example</groupId>
-	<artifactId>Todo</artifactId>
+	<groupId>PaymentType.example</groupId>
+	<artifactId>PaymentType</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Todo</name>
-	<description>Todo CRUD</description>
+	<name>PaymentType</name>
+	<description>PaymentType CRUD</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,7 +25,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -50,6 +53,7 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 	</dependencies>
 
 	<build>
