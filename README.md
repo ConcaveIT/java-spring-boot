@@ -1,16 +1,10 @@
-# java-spring-boot
+# *Task 02:* Create a Payment Gateway API using Java Spring Boot using SQLite Database.
 Demo Project
 
-# How to push code in this repository and naming convention for create branch
 
-## Push code in your branch
-1) First pull this repository
-2) create new branch : `git checkout -b topic-XX-github-userid` (This will create new branch and nagiave to that branch)
-3) `git add .`
-4) `git commit -m "Commit message"`
-5) `git push --set-upstream origin your_branch_name` (In this step you have to give autorize permission)
-6) Done . Happy coding;)
-
-## Create a branch. Name should be like this
-    topic-XX-github-userid 
-    eg: topic-01-zawad1992
+*Endpoints:*
+- GET /payment-types: Retrieve all payment types
+- POST /payment-types: Create a new payment type
+- GET /payment-types/{id}: Retrieve a specific payment type by ID
+- PUT /payment-types/{id}: Update a specific payment type by ID
+- DELETE /payment-types/{id}: Delete a specific payment type by ID
