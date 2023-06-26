@@ -4,6 +4,8 @@ import com.advpro.payment.model.PaymentType;
 import com.advpro.payment.dto.PaymentTypeDto;
 import com.advpro.payment.repository.PaymentTypeRepository;
 import com.advpro.payment.service.PaymentTypeService;
+import com.advpro.payment.validator.DtoValidator;
+import com.advpro.payment.exception.DtoValidationException;
 import com.advpro.payment.exception.PaymentMethodNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -12,14 +14,20 @@ import java.util.List;
 @Service
 public class PaymentTypeServiceImpl implements PaymentTypeService {
 
+    DtoValidator<PaymentTypeDto> paymentTypeValidator;
     PaymentTypeRepository paymentTypeRepository;
 
-    public PaymentTypeServiceImpl(PaymentTypeRepository paymentTypeRepository) {
+    public PaymentTypeServiceImpl(PaymentTypeRepository paymentTypeRepository, DtoValidator<PaymentTypeDto> paymentTypeValidator) {
         this.paymentTypeRepository = paymentTypeRepository;
+        this.paymentTypeValidator = paymentTypeValidator;
     }
 
     @Override
     public PaymentType storePaymentType(PaymentTypeDto paymentTypeDto) {
+        var validationErrors = paymentTypeValidator.validate(paymentTypeDto);
+        if (!validationErrors.isEmpty())
+            throw new DtoValidationException(validationErrors);
+
         PaymentType paymentType = PaymentType.build(
             0,
             paymentTypeDto.getName(),
@@ -29,7 +37,7 @@ public class PaymentTypeServiceImpl implements PaymentTypeService {
             paymentTypeDto.getDeletedAt()
         );
 
-        paymentTypeRepository.save(paymentType);
+        paymentType = paymentTypeRepository.save(paymentType);
 
         return paymentType;
     }

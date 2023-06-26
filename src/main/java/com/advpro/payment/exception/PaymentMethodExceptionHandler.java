@@ -11,10 +11,11 @@ public class PaymentMethodExceptionHandler {
     @ExceptionHandler(value = {PaymentMethodNotFoundException.class})
     public ResponseEntity<Object> handleCloudVendorNotFoundException
         (PaymentMethodNotFoundException paymentMethodNotFoundException) {
+
         PaymentMethodException paymentMethodException = new PaymentMethodException(
-                paymentMethodNotFoundException.getMessage(),
-                paymentMethodNotFoundException.getCause(),
-                HttpStatus.NOT_FOUND
+            paymentMethodNotFoundException.getMessage(),
+            paymentMethodNotFoundException.getCause(),
+            HttpStatus.NOT_FOUND
         );
 
         return new ResponseEntity<>(paymentMethodException, HttpStatus.NOT_FOUND);

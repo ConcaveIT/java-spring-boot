@@ -15,16 +15,16 @@ import java.util.Date;
 @NoArgsConstructor
 public class PaymentTypeDto {
 
-	@NotBlank(message = "The name field shouldn't be empty!")
+	@NotNull(message = "The name field shouldn't be empty!")
 	private String name;
 
-	@NotBlank(message = "The description field shouldn't be empty!")
+	@NotNull(message = "The description field shouldn't be empty!")
 	private String description;
 
-	@NotBlank(message = "The created at field shouldn't be empty!")
+	@NotNull(message = "The created at field shouldn't be empty!")
 	private Date createdAt;
 
-	@NotBlank(message = "The updated at field shouldn't be empty!")
+	@NotNull(message = "The updated at field shouldn't be empty!")
 	private Date UpdatedAt;
 
 	private Date DeletedAt;

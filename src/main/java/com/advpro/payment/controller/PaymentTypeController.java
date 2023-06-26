@@ -42,10 +42,10 @@ public class PaymentTypeController {
     }
 
     @DeleteMapping("/{id}")
-    public String deletePaymentType(@PathVariable("id") Integer id){
+    public ResponseEntity<String> deletePaymentType(@PathVariable("id") Integer id){
         paymentTypeService.deletePaymentType(id);
 
-        return "PaymentType item Deleted Successfully!";
+        return new ResponseEntity<String>("PaymentType item Deleted Successfully!", HttpStatus.OK);
     }
     
 }
