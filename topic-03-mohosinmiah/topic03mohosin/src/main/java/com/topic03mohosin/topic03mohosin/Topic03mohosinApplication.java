@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Topic03mohosinApplication {
 
+	// Added configuration for model mapper
 	@Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
