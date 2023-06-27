@@ -20,11 +20,10 @@ import com.topic03mohosin.topic03mohosin.service.CostCategoryService;
 @RestController
 @RequestMapping("/costcategories")
 public class CostCategoryController {
-    private final CostCategoryService costCategoryService;
 
-    public CostCategoryController(CostCategoryService costCategoryService) {
-        this.costCategoryService = costCategoryService;
-    }
+    @Autowired
+    private CostCategoryService costCategoryService;
+
 
     @PostMapping
     public ResponseEntity<CostCategoryDto> createCostCategory(@RequestBody CostCategoryDto costCategoryDto) {
