@@ -82,59 +82,86 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public MemberDto updateProject(Long id, MemberDto memberDto) {
-        
-    Optional<User> checkUser = userRepository.findById(id);
-           
-    if (checkUser.isPresent()) {
-        User user = checkUser.get();
-
-        if (memberDto.getMemberName() != null && !memberDto.getMemberName().isEmpty()) {
-            user.setMemberName(memberDto.getMemberName());
-        }
-
-        if (memberDto.getUsername() != null && !memberDto.getUsername().isEmpty()) {
-            user.setUsername(memberDto.getUsername());
-        }
-
-        if (memberDto.getEmail() != null && !memberDto.getEmail().isEmpty()) {
-            user.setEmail(memberDto.getEmail());
-        }
-
-        if (memberDto.getPassword() != null && !memberDto.getPassword().isEmpty()) {
-            user.setPassword(memberDto.getPassword());
-        }
-
-        if (memberDto.getDepartment() != null && !memberDto.getDepartment().isEmpty()) {
-            user.setDepartment(memberDto.getDepartment());
-        }
-
-        if (memberDto.getStatus() != null && !memberDto.getStatus().isEmpty()) {
-            user.setStatus(memberDto.getStatus());
-        }
-
-        // Add existing roles to the updated roles set
-        Set<Role> roles = user.getRoles();
-        // Update roles if provided in memberDTO
-        if (memberDto.getRoles() != null && !memberDto.getRoles().isEmpty()) {
-            for (RoleDto roleDto : memberDto.getRoles()) {
-                Role role = roleRepository.findByName(roleDto.getRoleName())
-                    .orElseThrow(() -> new EntityNotFoundException("Role not found: " + roleDto.getRoleName()));
-                    roles.add(role);
-            }
-        }
-
-        user.setRoles(roles);
-    
-        user.setPassword(passwordEncoder.encode(memberDto.getPassword()));
-        User updateMember = userRepository.save(user);
-        return modelMapper.map(updateMember, MemberDto.class);
-    }
-    else
+    public MemberDto updateProject( Long id, MemberDto memberDto )
     {
-        throw new EntityNotFoundException("Member U=Is not found");
-    }
+        
+        Optional<User> checkUser = userRepository.findById(id);
+            
+        if(checkUser.isPresent())
+        {
+            User user = checkUser.get();
+
+            if (memberDto.getMemberName() != null && !memberDto.getMemberName().isEmpty()) {
+                user.setMemberName(memberDto.getMemberName());
+            }
+
+            if (memberDto.getUsername() != null && !memberDto.getUsername().isEmpty()) {
+                user.setUsername(memberDto.getUsername());
+            }
+
+            if (memberDto.getEmail() != null && !memberDto.getEmail().isEmpty()) {
+                user.setEmail(memberDto.getEmail());
+            }
+
+            if (memberDto.getPassword() != null && !memberDto.getPassword().isEmpty()) {
+                user.setPassword(memberDto.getPassword());
+            }
+
+            if (memberDto.getDepartment() != null && !memberDto.getDepartment().isEmpty()) {
+                user.setDepartment(memberDto.getDepartment());
+            }
+
+            if (memberDto.getStatus() != null && !memberDto.getStatus().isEmpty()) {
+                user.setStatus(memberDto.getStatus());
+            }
+
+            // Add existing roles to the updated roles set
+            Set<Role> roles = user.getRoles();
+            // Update roles if provided in memberDTO
+            if (memberDto.getRoles() != null && !memberDto.getRoles().isEmpty()) {
+                for (RoleDto roleDto : memberDto.getRoles()) {
+                    Role role = roleRepository.findByName(roleDto.getRoleName())
+                        .orElseThrow(() -> new EntityNotFoundException("Role not found: " + roleDto.getRoleName()));
+                        roles.add(role);
+                }
+            }
+
+            user.setRoles(roles);
+        
+            user.setPassword(passwordEncoder.encode(memberDto.getPassword()));
+            User updateMember = userRepository.save(user);
+            return modelMapper.map(updateMember, MemberDto.class);
+        }
+        else
+        {
+            throw new EntityNotFoundException("Member U=Is not found");
+        }
     
     }
-    
+
+    @Override
+    public String deleteMember(Long id)
+    {
+        Optional<User> getUser = userRepository.findById(id);
+        if(getUser.isPresent()) {
+            User user = getUser.get();
+
+            // Delete the associated user_roles records
+            user.getRoles().clear();
+
+            // User delete
+            userRepository.delete(user);
+
+            return "User deleted : Username " + user.getUsername();
+        }
+        else
+        {
+            return "User not found with ID: " + id;
+        }
+    }
+
+
+
+
+
 }

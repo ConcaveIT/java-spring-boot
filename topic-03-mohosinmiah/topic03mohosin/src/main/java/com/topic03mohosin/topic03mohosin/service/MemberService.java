@@ -14,4 +14,8 @@ public interface MemberService {
     MemberDto getMemberById(Long id);
 
     MemberDto updateProject(Long id, MemberDto memberDto);
+
+    String deleteMember(Long id);
+
+
 } 
