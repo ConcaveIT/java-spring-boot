@@ -142,17 +142,17 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public String deleteMember(Long id)
     {
-        Optional<User> getUser = userRepository.findById(id);
-        if(getUser.isPresent()) {
-            User user = getUser.get();
+        Optional<User> getMember = userRepository.findById(id);
+        if(getMember.isPresent()) {
+            User member = getMember.get();
 
             // Delete the associated user_roles records
-            user.getRoles().clear();
+            member.getRoles().clear();
 
             // User delete
-            userRepository.delete(user);
+            userRepository.delete(member);
 
-            return "User deleted : Username " + user.getUsername();
+            return "User deleted : ID " + member.getId();
         }
         else
         {

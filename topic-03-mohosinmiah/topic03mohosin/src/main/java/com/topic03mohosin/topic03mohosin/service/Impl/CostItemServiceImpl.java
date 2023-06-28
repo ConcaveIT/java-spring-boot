@@ -136,7 +136,18 @@ public class CostItemServiceImpl implements CostItemService {
     @Override
     public String deleteCostItem(Long id)
     {
-        costItemRepository.deleteById(id);
-        return "Cost item deleted";
+        Optional<CostItem> getCostItem = costItemRepository.findById(id);
+
+        if(getCostItem.isPresent()) {
+            CostItem costItem = getCostItem.get();
+            // Delete cost Item
+           costItemRepository.deleteById(id);
+
+            return "Project deleted : ID " + costItem.getId();
+        }
+        else
+        {
+            return "Project not found with ID: " + id;
+        }
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.topic03mohosin.topic03mohosin.dto.CostCategoryDto;
 import com.topic03mohosin.topic03mohosin.dto.ProjectDto;
 import com.topic03mohosin.topic03mohosin.entity.CostCategory;
+import com.topic03mohosin.topic03mohosin.entity.CostItem;
 import com.topic03mohosin.topic03mohosin.entity.Project;
 import com.topic03mohosin.topic03mohosin.repository.CostCategoryRepository;
 import com.topic03mohosin.topic03mohosin.repository.ProjectRepository;
@@ -67,7 +68,19 @@ public class CostCategoryServiceImpl implements CostCategoryService {
 
     @Override
     public String deleteCostCategory(Long id) {
-        costCategoryRepository.deleteById(id);
-        return "Cost category deleted";
+
+        Optional<CostCategory> getCostCategory = costCategoryRepository.findById(id);
+
+        if(getCostCategory.isPresent()) {
+            CostCategory costCategory = getCostCategory.get();
+            // Delete cost category
+           costCategoryRepository.deleteById(id);
+
+            return "Cost category deleted : ID " + costCategory.getId();
+        }
+        else
+        {
+            return "Cost Category not found with ID: " + id;
+        }
     }
 }

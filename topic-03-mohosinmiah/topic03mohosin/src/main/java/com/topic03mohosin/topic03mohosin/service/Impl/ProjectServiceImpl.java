@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.topic03mohosin.topic03mohosin.dto.ProjectDto;
 import com.topic03mohosin.topic03mohosin.entity.Project;
+import com.topic03mohosin.topic03mohosin.entity.User;
 import com.topic03mohosin.topic03mohosin.repository.ProjectRepository;
 import com.topic03mohosin.topic03mohosin.service.ProjectService;
 
@@ -93,8 +94,21 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public String deleteProject(Long id)
     {
-        projectRepository.deleteById(id);
-        return "Project deleted";
+
+        Optional<Project> getProject = projectRepository.findById(id);
+
+        if(getProject.isPresent()) {
+            Project project = getProject.get();
+            // Delete project
+           projectRepository.deleteById(id);
+
+            return "Project deleted : ID " + project.getId();
+        }
+        else
+        {
+            return "Project not found with ID: " + id;
+        }
+
     }
 
 }

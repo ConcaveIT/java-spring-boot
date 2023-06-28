@@ -2,6 +2,9 @@ package com.topic03mohosin.topic03mohosin.entity;
 
 import java.time.LocalDate;
 
+import org.hibernate.annotations.OnDelete;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,7 +29,9 @@ public class CostItem {
     private double amount;
 
     @ManyToOne
-    @JoinColumn(name = "cost_category_id")
+    @JoinColumn(
+        name = "cost_category_id"
+    )
     private CostCategory costCategory;
 
     @ManyToOne
