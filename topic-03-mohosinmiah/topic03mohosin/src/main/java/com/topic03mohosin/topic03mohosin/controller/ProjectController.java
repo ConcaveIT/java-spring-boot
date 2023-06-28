@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.topic03mohosin.topic03mohosin.dto.ProjectDto;
 import com.topic03mohosin.topic03mohosin.service.ProjectService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 @RestController
 @RequestMapping("/projects")
 public class ProjectController {
@@ -23,6 +26,7 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<ProjectDto> createProject(@RequestBody ProjectDto projectDto)
     {
@@ -30,13 +34,14 @@ public class ProjectController {
         return ResponseEntity.ok(createdProject);
     }
 
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @GetMapping
     public ResponseEntity<List<ProjectDto>> getAllProjects() {
         List<ProjectDto> projects = projectService.getAllProjects();
         return ResponseEntity.ok(projects);
     }
 
-
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<ProjectDto> getProjectById(@PathVariable Long id)
     {
@@ -44,6 +49,7 @@ public class ProjectController {
         return ResponseEntity.ok(project);
     }
 
+    @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<ProjectDto> updateProject( @PathVariable Long id, @RequestBody ProjectDto projectDto )
     {
@@ -51,7 +57,7 @@ public class ProjectController {
         return ResponseEntity.ok(updatedProject);
     }
 
-    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProject(@PathVariable Long id)
     {
