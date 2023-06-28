@@ -2,6 +2,8 @@ package com.topic03mohosin.topic03mohosin.entity;
 
 import java.util.Set;
 
+import com.topic03mohosin.topic03mohosin.dto.RoleDto;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
