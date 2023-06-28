@@ -32,6 +32,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     public ResponseEntity<MemberDto> createMember( @RequestBody MemberDto memberDto){

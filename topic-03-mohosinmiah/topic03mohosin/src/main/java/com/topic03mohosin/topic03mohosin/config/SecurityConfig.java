@@ -83,6 +83,7 @@ public class SecurityConfig {
         .authorizeHttpRequests( requests -> requests
             .requestMatchers( "/costcategories/**").authenticated()
             .requestMatchers( "/members/**").authenticated()
+            .requestMatchers( "/project-cost-report/**").authenticated()
             .requestMatchers("/api/auth/**").permitAll()
             .anyRequest().authenticated()
         ).exceptionHandling( exception -> exception
