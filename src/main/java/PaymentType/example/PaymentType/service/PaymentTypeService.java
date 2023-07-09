@@ -1,7 +1,7 @@
-package PaymentType.example.PaymentType.service;
+package paymentType.example.paymentType.service;
 
-import PaymentType.example.PaymentType.dto.PaymentTypeDto;
-import PaymentType.example.PaymentType.exception.PaymentTypeNotFoundException;
+import paymentType.example.paymentType.dto.PaymentTypeDto;
+import paymentType.example.paymentType.exception.PaymentTypeNotFoundException;
 
 import java.util.List;
 

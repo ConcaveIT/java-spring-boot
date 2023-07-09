@@ -1,4 +1,4 @@
-package PaymentType.example.PaymentType;
+package paymentType.example.paymentType;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

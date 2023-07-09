@@ -1,10 +1,10 @@
-package PaymentType.example.PaymentType.service.impl;
+package paymentType.example.paymentType.service.impl;
 
-import PaymentType.example.PaymentType.exception.PaymentTypeNotFoundException;
-import PaymentType.example.PaymentType.service.PaymentTypeService;
-import PaymentType.example.PaymentType.dto.PaymentTypeDto;
-import PaymentType.example.PaymentType.entity.PaymentType;
-import PaymentType.example.PaymentType.repository.PaymentTypeRepository;
+import paymentType.example.paymentType.exception.PaymentTypeNotFoundException;
+import paymentType.example.paymentType.service.PaymentTypeService;
+import paymentType.example.paymentType.dto.PaymentTypeDto;
+import paymentType.example.paymentType.entity.PaymentType;
+import paymentType.example.paymentType.repository.PaymentTypeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

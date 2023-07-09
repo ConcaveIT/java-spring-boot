@@ -1,4 +1,4 @@
-package PaymentType.example.PaymentType.exception;
+package paymentType.example.paymentType.exception;
 
 public class PaymentTypeNotFoundException extends Exception{
 

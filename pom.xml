@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.0</version>
+		<version>3.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>PaymentType.example</groupId>
-	<artifactId>PaymentType</artifactId>
+	<groupId>paymentType.example</groupId>
+	<artifactId>paymentType</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>PaymentType</name>
-	<description>PaymentType CRUD</description>
+	<name>paymentType</name>
+	<description>paymentType project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -43,11 +43,11 @@
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-community-dialects</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.mysql</groupId>-->
-<!--			<artifactId>mysql-connector-j</artifactId>-->
-<!--			<scope>runtime</scope>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>com.mysql</groupId>-->
+		<!--			<artifactId>mysql-connector-j</artifactId>-->
+		<!--			<scope>runtime</scope>-->
+		<!--		</dependency>-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

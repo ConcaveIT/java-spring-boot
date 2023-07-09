@@ -1,13 +1,14 @@
-package PaymentType.example.PaymentType.controller;
+package paymentType.example.paymentType.controller;
 
-import PaymentType.example.PaymentType.exception.PaymentTypeNotFoundException;
-import PaymentType.example.PaymentType.service.PaymentTypeService;
-import PaymentType.example.PaymentType.dto.PaymentTypeDto;
+import paymentType.example.paymentType.exception.PaymentTypeNotFoundException;
+import paymentType.example.paymentType.service.PaymentTypeService;
+
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.*;
+import paymentType.example.paymentType.dto.PaymentTypeDto;
 
 import java.util.List;
 

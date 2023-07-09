@@ -1,15 +1,13 @@
-package PaymentType.example.PaymentType;
+package paymentType.example.paymentType;
 
 import org.junit.jupiter.api.Test;
-
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 @SpringBootTest
-    class PaymentTypeApplicationTests {
+class PaymentTypeApplicationTests {
 
-        @Test
-        void contextLoads() {
-        }
+	@Test
+	void contextLoads() {
+	}
 
-    }
+}

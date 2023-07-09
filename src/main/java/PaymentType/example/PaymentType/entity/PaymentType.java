@@ -1,4 +1,4 @@
-package PaymentType.example.PaymentType.entity;
+package paymentType.example.paymentType.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

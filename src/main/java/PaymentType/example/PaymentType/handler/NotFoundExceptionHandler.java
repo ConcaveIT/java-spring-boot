@@ -1,5 +1,5 @@
-package PaymentType.example.PaymentType.handler;
-import PaymentType.example.PaymentType.exception.PaymentTypeNotFoundException;
+package paymentType.example.paymentType.handler;
+import paymentType.example.paymentType.exception.PaymentTypeNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package PaymentType.example.PaymentType.dto;
+package paymentType.example.paymentType.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

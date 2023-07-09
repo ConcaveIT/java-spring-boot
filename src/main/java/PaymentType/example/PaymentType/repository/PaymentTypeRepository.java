@@ -1,6 +1,6 @@
-package PaymentType.example.PaymentType.repository;
+package paymentType.example.paymentType.repository;
 
-import PaymentType.example.PaymentType.entity.PaymentType;
+import paymentType.example.paymentType.entity.PaymentType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PaymentTypeRepository extends JpaRepository<PaymentType, Long> {
