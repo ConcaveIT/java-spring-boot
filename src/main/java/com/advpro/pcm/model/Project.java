@@ -1,5 +1,7 @@
 package com.advpro.pcm.model;
 
+import com.advpro.pcm.model.enumtype.ProjectStatus;
+
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 200)
 	private String name;
 
 	@Column(nullable = false, length = 2000)

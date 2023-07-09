@@ -1,5 +1,7 @@
 package com.advpro.pcm.model;
 
+import com.advpro.pcm.model.enumtype.CostItemStatus;
+
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -20,13 +22,13 @@ public class CostItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 100)
 	private String name;
 
 	@Column(nullable = false, length = 2000)
 	private String description;
 
-	@Column
+	@Column(nullable = false)
 	private Float amount;
 
 	@Column(nullable = false)

@@ -1,4 +1,4 @@
-package com.advpro.pcm.model;
+package com.advpro.pcm.model.enumtype;
 
 public enum Role {
 

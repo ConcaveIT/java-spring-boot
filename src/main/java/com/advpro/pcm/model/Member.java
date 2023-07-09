@@ -1,5 +1,9 @@
 package com.advpro.pcm.model;
 
+import com.advpro.pcm.model.enumtype.Role;
+import com.advpro.pcm.model.enumtype.Department;
+import com.advpro.pcm.model.enumtype.MemberStatus;
+
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -20,17 +24,17 @@ public class Member {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String name;
 
     @Column(nullable=false)
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(nullable=false, unique=true)
+    @Column(nullable=false, unique=true, length = 200)
     private String email;
 
-    @Column(nullable=false)
+    @Column(nullable=false, length = 50)
     private String password;
 
     @Column(nullable = false)

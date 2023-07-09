@@ -20,7 +20,7 @@ public class CostCategory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 100)
 	private String name;
 
 	@Column(nullable = false, length = 2000)
