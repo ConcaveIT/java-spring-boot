@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "a70e6526-d262-44de-9b6f-2279d1ed9d61",
+		"name": "Project Cost Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28051621"
+	},
+	"item": [
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Rocket\",\r\n        \"description\": \"Rocket project integration to GPB\",\r\n        \"startDate\": \"2023-06-18\",\r\n        \"endDate\": \"2023-06-18\",\r\n        \"status\": \"Active\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Nagad\",\r\n        \"description\": \"Nagad project integration to GPB\",\r\n        \"startDate\": \"2023-06-18\",\r\n        \"endDate\": \"2023-06-18\",\r\n        \"status\": \"Active\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/projects/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/members",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/members/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Muhammad Jaber\",\r\n        \"role\": \"ADMIN\",\r\n        \"email\": \"skmdjaber@gmail.com\",\r\n        \"password\": \"secret\",\r\n        \"department\": \"Operations\",\r\n        \"status\": \"Active\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/members",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id\": 1,\r\n        \"name\": \"Muhammad Jaber\",\r\n        \"role\": \"ADMIN\",\r\n        \"email\": \"skmdjaber@gmail.com\",\r\n        \"password\": \"secret\",\r\n        \"department\": \"Operations\",\r\n        \"status\": \"Active\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/members/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/members/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cost Categories",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costcategories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costcategories/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costcategories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Desk Furniture\",\r\n        \"description\": \"Desk related furniture\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/costcategories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costcategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"D\",\r\n        \"description\": \"Desk related furniture\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/costcategories/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costcategories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costcategories/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costcategories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cost Items",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costitems",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costitems/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costitems",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"name\": \"Desk Table\",\r\n        \"description\": \"Desk table 36/48 size\",\r\n        \"amount\": 6000.75,\r\n        \"costCategoryId\": 1,\r\n        \"projectId\": 1,\r\n        \"entryBy\": 1,\r\n        \"approvedBy\": 1,\r\n        \"status\": \"Ready\",\r\n        \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n        \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/costitems",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Desk Table\",\r\n    \"description\": \"Desk table 36/48 size\",\r\n    \"amount\": 9000.75,\r\n    \"costCategoryId\": 1,\r\n    \"projectId\": 1,\r\n    \"entryBy\": 1,\r\n    \"approvedBy\": 1,\r\n    \"status\": \"Ready\",\r\n    \"createdAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n    \"updatedAt\": \"2023-06-18T18:00:00.000+00:00\",\r\n    \"deletedAt\": \"2023-06-18T18:00:00.000+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/costitems/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costitems",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/costitems/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"costitems",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "{{{base_url}}",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

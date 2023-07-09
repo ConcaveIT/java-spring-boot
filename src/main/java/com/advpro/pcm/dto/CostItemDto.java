@@ -18,13 +18,13 @@ import java.util.Date;
 public class CostItemDto {
 
 	@NotNull(message = "The name field shouldn't be empty!")
-	@Size(min = 2, message = "{validation.name.size.too_short}")
-	@Size(max = 100, message = "{validation.name.size.too_long}")
+	@Size(min = 2, message = "The name must be at least 2 characters")
+	@Size(max = 100, message = "The name must be at most 100 characters")
 	private String name;
 
 	@NotNull(message = "The description field shouldn't be empty!")
-	@Size(min = 2, message = "{validation.description.size.too_short}")
-	@Size(max = 2000, message = "{validation.description.size.too_long}")
+	@Size(min = 2, message = "The description must be at least 2 characters")
+	@Size(max = 2000, message = "The description must be at most 2000 characters")
 	private String description;
 
 	@NotNull(message = "The amount field shouldn't be empty!")

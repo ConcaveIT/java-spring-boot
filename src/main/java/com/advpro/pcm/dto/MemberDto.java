@@ -20,21 +20,21 @@ import java.util.Date;
 public class MemberDto {
 
 	@NotNull(message = "The name field shouldn't be empty!")
-	@Size(min = 2, message = "{validation.name.size.too_short}")
-	@Size(max = 100, message = "{validation.name.size.too_long}")
+	@Size(min = 2, message = "The name must be at least 2 characters")
+	@Size(max = 100, message = "The name must be at most 100 characters")
 	private String name;
 
 	@NotNull(message = "The role field shouldn't be empty!")
 	private Role role;
 
 	@NotNull(message = "The email field shouldn't be empty!")
-	@Size(min = 2, message = "{validation.email.size.too_short}")
-	@Size(max = 200, message = "{validation.email.size.too_long}")
+	@Size(min = 2, message = "The email must be at least 2 characters")
+	@Size(max = 200, message = "The email must be at most 200 characters")
 	private String email;
 
 	@NotNull(message = "The password field shouldn't be empty!")
-	@Size(min = 6, message = "{validation.password.size.too_short}")
-	@Size(max = 50, message = "{validation.password.size.too_long}")
+	@Size(min = 6, message = "The password must be at least 6 characters")
+	@Size(max = 50, message = "The password must be at most 50 characters")
 	private String password;
 
 	@NotNull(message = "The department field shouldn't be empty!")
