@@ -1,18 +1,16 @@
 ## PCM - Project Cost Management
 
-Table Names - Use MySql
-(1) Project: Represents a specific project being managed.
-	● Attributes: Id, ProjectName, ProjectDescription, StartDate, EndDate,Ststus
-(2) CostCategory: Represents different categories or types of project costs.
-	● Attributes: Id, CategoryName, CategoryDescription
-(3) CostItem: Represents individual cost items or expenses associated with the project.
-	● Attributes: Id, ItemName, ItemDescription, Amount,CostCategoryId, ProjectId,
-	Date,EntryBy,ApprovedBy,Status
-(4) Member: Represents the members involved in the project.
-	● Attributes: Id,Email, Password, MemberName, Role, Department,Status
+**Table Names - Use MySql**
+1. Project: Represents a specific project being managed.<br>
+	```Attributes: Id, ProjectName, ProjectDescription, StartDate, EndDate,Status```
+2. CostCategory: Represents different categories or types of project costs.<br>
+	```Attributes: Id, CategoryName, CategoryDescription```
+3. CostItem: Represents individual cost items or expenses associated with the project.<br>```Attributes: Id, ItemName, ItemDescription, Amount,CostCategoryId, ProjectId,
+	Date,EntryBy,ApprovedBy,Status```
+4. Member: Represents the members involved in the project.<br>```Attributes: Id,Email, Password, MemberName, Role, Department,Status```
 
-# Create CRUD - API Endpoint for each Tables.
-# Make Report API for a Project cost with date range filter
+- Create CRUD - API Endpoint for each Tables.
+- Make Report API for a Project cost with date range filter
 
 ## How to use 🤔
 
