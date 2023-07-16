@@ -25,6 +25,9 @@
 
 (4) Now you have access to Project, Cost Category, Cost Item & Member
 
+(2) you can logout here (api/v1/auth/logout)
+    After logout your access token is not valid anymore.
+
 (5) "Report API for a Project cost with date range filter" feature will be added soon.
 
 
