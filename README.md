@@ -14,10 +14,10 @@
 
 ## How to use 🤔
 
-(1) Register a new member (api/v1/auth/register)
-	After registration you will get a access token.
+(1) Register a new member (api/v1/auth/register)<br>
+    After registration you will get a access token.
 
-(2) If you are already registered, then you can login here (api/v1/auth/register)
+(2) If you are already registered, then you can login here (api/v1/auth/register)<br>
     After login  you will get a access token
 
 
@@ -25,7 +25,7 @@
 
 (4) Now you have access to Project, Cost Category, Cost Item & Member
 
-(2) you can logout here (api/v1/auth/logout)
+(2) you can logout here (api/v1/auth/logout)<br>
     After logout your access token is not valid anymore.
 
 (5) "Report API for a Project cost with date range filter" feature will be added soon.
