@@ -7,20 +7,20 @@ import com.advpro.pcm.service.MemberService;
 import com.advpro.pcm.dto.validator.DtoValidator;
 import com.advpro.pcm.exception.DtoValidationException;
 import com.advpro.pcm.exception.EntityNotFoundException;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 
-    MemberRepository memberRepository;
-    DtoValidator<MemberDto> memberValidator;
-
-    public MemberServiceImpl(MemberRepository memberRepository, DtoValidator<MemberDto> memberValidator) {
-        this.memberRepository = memberRepository;
-        this.memberValidator = memberValidator;
-    }
+    private final MemberRepository memberRepository;
+    private final DtoValidator<MemberDto> memberValidator;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public Member store(MemberDto memberDto) {
@@ -29,22 +29,21 @@ public class MemberServiceImpl implements MemberService {
         if (!validationErrors.isEmpty())
             throw new DtoValidationException(validationErrors);
 
-        Member member = Member.build(
-            0,
-            memberDto.getName(),
-            memberDto.getRole(),
-            memberDto.getEmail(),
-            memberDto.getPassword(),
-            memberDto.getDepartment(),
-            memberDto.getStatus(),
-            memberDto.getCreatedAt(),
-            memberDto.getUpdatedAt(),
-            memberDto.getDeletedAt()
-        );
+        var member = Member.builder()
+            .name(memberDto.getName())
+            .role(memberDto.getRole())
+            .email(memberDto.getEmail())
+            .password(passwordEncoder.encode(memberDto.getPassword()))
+            .department(memberDto.getDepartment())
+            .status(memberDto.getStatus())
+            .createdAt(memberDto.getCreatedAt())
+            .updatedAt(memberDto.getUpdatedAt())
+            .deletedAt(memberDto.getDeletedAt())
+            .build();
 
-        member = memberRepository.save(member);
+        var savedMember = memberRepository.save(member);
 
-        return member;
+        return savedMember;
     }
 
     @Override

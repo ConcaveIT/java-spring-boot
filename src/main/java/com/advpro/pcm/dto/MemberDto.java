@@ -5,17 +5,20 @@ import com.advpro.pcm.model.enumtype.Department;
 import com.advpro.pcm.model.enumtype.MemberStatus;
 
 import lombok.Data;
+import lombok.Builder;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import jakarta.validation.constraints.*;
 import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Date;
 
 @Data
-@AllArgsConstructor(staticName = "build")
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class MemberDto {
 
