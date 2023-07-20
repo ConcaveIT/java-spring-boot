@@ -44,7 +44,7 @@ public class MemberController {
 
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @GetMapping
-    public ResponseEntity<List<MemberDto>> getAllCostItems() {
+    public ResponseEntity<List<MemberDto>> getAllMembers() {
         List<MemberDto> members = memberService.getAllMembers();
         return ResponseEntity.ok(members);
     }
@@ -56,10 +56,9 @@ public class MemberController {
         return ResponseEntity.ok(member);
     }
 
-
     @PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
     @PutMapping("/{id}")
-    public ResponseEntity<MemberDto> updateProject( @PathVariable Long id, @RequestBody MemberDto memberDto )
+    public ResponseEntity<MemberDto> updateMember( @PathVariable Long id, @RequestBody MemberDto memberDto )
     {
         MemberDto updatedMember = memberService.updateProject(id, memberDto);
         return ResponseEntity.ok(updatedMember);

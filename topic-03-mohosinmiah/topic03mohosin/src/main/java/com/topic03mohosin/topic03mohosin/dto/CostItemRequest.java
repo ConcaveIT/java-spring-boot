@@ -16,8 +16,8 @@ public class CostItemRequest {
     private Long costCategory;
     private Long project;
     private LocalDate date;
-    private String entryBy;
-    private String approvedBy;
+    private Long entryBy;
+    private Long approvedBy;
     private String status;
 }
 

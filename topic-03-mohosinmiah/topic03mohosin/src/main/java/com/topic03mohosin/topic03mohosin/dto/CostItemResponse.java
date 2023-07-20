@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 import com.topic03mohosin.topic03mohosin.entity.CostCategory;
 import com.topic03mohosin.topic03mohosin.entity.Project;
+import com.topic03mohosin.topic03mohosin.entity.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class CostItemResponse {
     private CostCategory costCategory;
     private Project project;
     private LocalDate date;
-    private String entryBy;
-    private String approvedBy;
+    private User entryBy;
+    private User approvedBy;
     private String status;
 }

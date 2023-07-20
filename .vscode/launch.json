@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Topic03mohosinApplication<topic03mohosin>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.topic03mohosin.topic03mohosin.Topic03mohosinApplication",
+            "projectName": "topic03mohosin",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -13,9 +13,11 @@ import com.topic03mohosin.topic03mohosin.dto.CostItemResponse;
 import com.topic03mohosin.topic03mohosin.entity.CostCategory;
 import com.topic03mohosin.topic03mohosin.entity.CostItem;
 import com.topic03mohosin.topic03mohosin.entity.Project;
+import com.topic03mohosin.topic03mohosin.entity.User;
 import com.topic03mohosin.topic03mohosin.repository.CostCategoryRepository;
 import com.topic03mohosin.topic03mohosin.repository.CostItemRepository;
 import com.topic03mohosin.topic03mohosin.repository.ProjectRepository;
+import com.topic03mohosin.topic03mohosin.repository.UserRepository;
 import com.topic03mohosin.topic03mohosin.service.CostItemService;
 import com.topic03mohosin.topic03mohosin.service.ProjectService;
 
@@ -32,6 +34,9 @@ public class CostItemServiceImpl implements CostItemService {
 
     @Autowired
     private ProjectRepository projectRepository;
+
+    @Autowired
+    private UserRepository userRepository;
     
     @Autowired
     private ModelMapper modelMapper;
@@ -46,8 +51,14 @@ public class CostItemServiceImpl implements CostItemService {
 
         // Get Project By ID and check Project is exist or not
         Project project = projectRepository.findById(costItemDto.getProject()).get();
+
+        // Get User By ID and check User is exist or not
+        User entryBy = userRepository.findById(costItemDto.getEntryBy()).get();
+
+        // Get User By ID and check User is exist or not
+        User approvedBy = userRepository.findById(costItemDto.getApprovedBy()).get();
         
-        if(costCategory.getId() > 0 && project.getId() > 0 )
+        if(costCategory.getId() > 0 && project.getId() > 0 && entryBy.getId() > 0 &&  approvedBy.getId() > 0 )
         {
 
         costItem.setItemName(costItemDto.getItemName());
@@ -61,8 +72,8 @@ public class CostItemServiceImpl implements CostItemService {
         costItem.setProject(project);
 
         costItem.setDate(costItemDto.getDate());
-        costItem.setEntryBy(costItemDto.getEntryBy());
-        costItem.setApprovedBy(costItemDto.getApprovedBy());
+        costItem.setEntryBy(entryBy);
+        costItem.setApprovedBy(approvedBy);
         costItem.setStatus(costItemDto.getStatus());
 
         CostItem saveCostItem = costItemRepository.save(costItem);
@@ -104,6 +115,12 @@ public class CostItemServiceImpl implements CostItemService {
 
         // Get Project By ID and check Project is exist or not
         Project project = projectRepository.findById(costItemDto.getProject()).get();
+
+        // Get User By ID and check User is exist or not
+        User entryBy = userRepository.findById(costItemDto.getEntryBy()).get();
+
+        // Get User By ID and check User is exist or not
+        User approvedBy = userRepository.findById(costItemDto.getApprovedBy()).get();
         
         if(costCategory.getId() > 0 && project.getId() > 0 )
         {
@@ -119,8 +136,8 @@ public class CostItemServiceImpl implements CostItemService {
         costItem.setProject(project);
 
         costItem.setDate(costItemDto.getDate());
-        costItem.setEntryBy(costItemDto.getEntryBy());
-        costItem.setApprovedBy(costItemDto.getApprovedBy());
+        costItem.setEntryBy(entryBy);
+        costItem.setApprovedBy(approvedBy);
         costItem.setStatus(costItemDto.getStatus());
 
         CostItem updatedCostItem = costItemRepository.save(costItem);
