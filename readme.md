@@ -25,7 +25,14 @@ Admin
 }
 ```
 
+User 
 
+```
+{
+	"usernameOrEmail" : "userone",
+	"password" : "userone"
+}
+```
 
 # java-spring-boot
 Demo Project
