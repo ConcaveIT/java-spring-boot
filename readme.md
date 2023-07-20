@@ -2,12 +2,12 @@
 
 ## Topic 3 API Resource
 
-<a href="https://github.com/ConcaveIT/java-spring-boot/blob/topic-03-mohosinmiah/topic-03-mohosinmiah/topic03mohosin/src/main/resources/Task%2003.postman_collection.json" title="Topic 3 API Resource" target="_blank"> Topic 3 API Resource </a>
+<a href="https://github.com/ConcaveIT/java-spring-boot/blob/topic-03-mohosinmiah/topic-03-mohosinmiah/topic03mohosin/src/main/resources/Task%2003.postman_collection.json"  target="_blank" > Topic 3 API Resource </a>
 
 ## Topic 3 : Database
 
 <a href="https://github.com/ConcaveIT/java-spring-boot/blob/topic-03-mohosinmiah/topic-03-mohosinmiah/topic03mohosin/src/main/resources/topic03_mohosin.sql" 
-title="Topic 3 Database with Data"> Topic 3 Database with Data </a>
+ target="_blank"> Topic 3 Database with Data </a>
 
 ## Login  API URL 
 
