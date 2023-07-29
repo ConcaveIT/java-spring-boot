@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "cf1c84e0-1443-41d0-8bec-dbf088e08a2e",
+		"name": "TodoJava",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10296824"
+	},
+	"item": [
+		{
+			"name": "storetodo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"\",\r\n    \"description\":\"nice\",\r\n    \"status\":\"completed\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/v1/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"v1",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "gettodolist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/v1/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"v1",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatetodo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"title\": \"\",\r\n        \"description\": \"nice post\",\r\n        \"status\": \"completed\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8010/api/v1/todos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"v1",
+						"todos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tododelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/v1/todos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"v1",
+						"todos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signletodo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8010/api/v1/todos/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"api",
+						"v1",
+						"todos",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
