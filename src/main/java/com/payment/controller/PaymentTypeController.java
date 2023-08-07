@@ -1,9 +1,9 @@
 package com.payment.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,35 +17,39 @@ import com.payment.model.PaymentType;
 import com.payment.service.PaymentTypeService;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/api/payment-types")
 public class PaymentTypeController {
 	
+	private final PaymentTypeService paymentTypeService;
+	
 	@Autowired
-	@Qualifier("paymentTypeService")
-    private PaymentTypeService paymentTypeService;
-
-    @GetMapping
-    public List<PaymentType> getAllPayments() {
-        return paymentTypeService.getAllPayments();
+    public PaymentTypeController(PaymentTypeService paymentTypeService) {
+        this.paymentTypeService = paymentTypeService;
+    }
+	
+	@GetMapping
+    public List<PaymentType> getAllPaymentTypes() {
+        return paymentTypeService.getAllPaymentTypes();
     }
 
-    @GetMapping("/{id}")
-    public PaymentType getPaymentById(@PathVariable Long id) {
-        return paymentTypeService.getPaymentById(id);
+	@GetMapping("/{id}")
+    public Optional<PaymentType> getPaymentTypeById(@PathVariable Long id) {
+        return paymentTypeService.getPaymentTypeById(id);
     }
 
     @PostMapping
-    public PaymentType createPayment(@RequestBody PaymentType payment) {
-        return paymentTypeService.createPayment(payment);
+    public PaymentType createPaymentType(@RequestBody PaymentType paymentType) {
+        return paymentTypeService.savePaymentType(paymentType);
     }
 
     @PutMapping("/{id}")
-    public PaymentType updatePayment(@PathVariable Long id, @RequestBody PaymentType paymentDetails) {
-        return paymentTypeService.updatePayment(id, paymentDetails);
+    public PaymentType updatePaymentType(@PathVariable Long id, @RequestBody PaymentType paymentType) {
+        paymentType.setId(id);
+        return paymentTypeService.savePaymentType(paymentType);
     }
 
     @DeleteMapping("/{id}")
-    public void deletePayment(@PathVariable Long id) {
-        paymentTypeService.deletePayment(id);
+    public void deletePaymentType(@PathVariable Long id) {
+        paymentTypeService.deletePaymentType(id);
     }
 }
